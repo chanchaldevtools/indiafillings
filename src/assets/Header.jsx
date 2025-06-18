@@ -6,6 +6,8 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 export default function Header() {
   return (
@@ -23,6 +25,14 @@ export default function Header() {
           >
             <NavDropdown title="Startup" id="startup-dropdown">
               <NavDropdown.Item as={Link} to="/about">
+                <Row>
+                  <Col xs={12} md={8}>
+                    xs=12 md=8
+                  </Col>
+                  <Col xs={6} md={4}>
+                    xs=6 md=4
+                  </Col>
+                </Row>
                 Startup
               </NavDropdown.Item>
             </NavDropdown>

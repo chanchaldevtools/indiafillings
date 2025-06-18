@@ -2,7 +2,6 @@ import React from "react";
 import Header from "../assets/Header";
 import Carousel from "react-bootstrap/Carousel";
 import Card from "react-bootstrap/Card";
-
 import bannerImg1 from "../Images/banner1.png";
 import bannerImg2 from "../Images/banner2.png";
 import bannerImg3 from "../Images/banner3.png";

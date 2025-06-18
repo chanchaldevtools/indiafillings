@@ -266,6 +266,8 @@ a.link-tab {
     border: 1px solid #18ac67;
     font-weight: 500;
     border-radius: 25px;
+    height: 20px;
+    line-height: 17px;
 }
 
 .tab-details a {
