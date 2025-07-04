@@ -1,5 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebookF,
+  faTwitter,
+  faLinkedinIn,
+  faInstagram
+} from "@fortawesome/free-brands-svg-icons";
 
 const footerData = [
   {
@@ -24,6 +32,13 @@ const footerData = [
   },
 ];
 
+const socialLinks = [
+  { icon: faFacebookF, url: "/facebook", label: "Facebook" },
+  { icon: faTwitter, url: "/twitter", label: "Twitter" },
+  { icon: faLinkedinIn, url: "/linkedin", label: "LinkedIn" },
+  { icon: faInstagram, url: "/instagram", label: "Instagram" },
+];
+
 export default function Footer() {
   return (
     <div>
@@ -34,8 +49,8 @@ export default function Footer() {
             <ul>
               {section.links.map((link, i) => (
                 <li key={i}>
-                  <i className="fa-solid fa-chevron-right"></i>{" "}
-                  <Link href="#">{link}</Link>
+                  <FontAwesomeIcon icon={faAngleRight} />{" "}
+                  <Link to="#">{link}</Link>
                 </li>
               ))}
             </ul>
@@ -45,24 +60,15 @@ export default function Footer() {
       <div className="footer-bottom">
         <p>
           © {new Date().getFullYear()}{" "}
-          <Link as={Link} to="/">
-            Technext Technosoft Pvt. Ltd.
-          </Link>{" "}
+          <Link to="/">Technext Technosoft Pvt. Ltd.</Link>{" "}
           All rights reserved.
         </p>
         <div className="social-icons">
-          <Link to="/facebook">
-            <i className="fab fa-facebook-f"></i>
-          </Link>
-          <Link to="/twitter">
-            <i className="fab fa-twitter"></i>
-          </Link>
-          <Link to="/linkedin">
-            <i className="fab fa-linkedin-in"></i>
-          </Link>
-          <Link to="/instagram">
-            <i className="fab fa-instagram"></i>
-          </Link>
+          {socialLinks.map((social, index) => (
+            <Link key={index} to={social.url} aria-label={social.label}>
+              <FontAwesomeIcon icon={social.icon} />
+            </Link>
+          ))}
         </div>
       </div>
     </div>

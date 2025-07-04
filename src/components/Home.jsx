@@ -1,7 +1,28 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import {
+  Container,
+  Row,
+  Col,
+  Card,
+  Button,
+  Image,
+  Carousel
+} from "react-bootstrap";
 import Header from "../assets/Header";
-import Carousel from "react-bootstrap/Carousel";
-import Card from "react-bootstrap/Card";
+import Footer from "../assets/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBuilding,
+  faShieldHalved,
+  faCalculator,
+  faNewspaper,
+  faPercent,
+  faCreditCard,
+  faBoxArchive,
+  faCalendarWeek
+} from "@fortawesome/free-solid-svg-icons";
+
 import bannerImg1 from "../Images/banner1.png";
 import bannerImg2 from "../Images/banner2.png";
 import bannerImg3 from "../Images/banner3.png";
@@ -22,13 +43,6 @@ import bank4 from "../Images/bank4.png";
 import bank5 from "../Images/bank5.png";
 import bank6 from "../Images/bank6.png";
 
-import { Button, Container } from "react-bootstrap";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import { Link } from "react-router-dom";
-import Image from "react-bootstrap/Image";
-import Footer from "../assets/Footer";
-
 const bannerImages = [
   { src: bannerImg1, alt: "First slide" },
   { src: bannerImg2, alt: "Second slide" },
@@ -36,12 +50,12 @@ const bannerImages = [
 ];
 
 const servicesData = [
-  { icon: "fa-regular fa-building", label: "Incorporation" },
-  { icon: "fa-solid fa-shield-halved", label: "Trademark" },
-  { icon: "fa-solid fa-calculator", label: "Accounting" },
-  { icon: "fa-solid fa-newspaper", label: "Income Tax" },
-  { icon: "fa-solid fa-percent", label: "GST Services" },
-  { icon: "fa-regular fa-credit-card", label: "Payroll" },
+  { icon: faBuilding, label: "Incorporation" },
+  { icon: faShieldHalved, label: "Trademark" },
+  { icon: faCalculator, label: "Accounting" },
+  { icon: faNewspaper, label: "Income Tax" },
+  { icon: faPercent, label: "GST Services" },
+  { icon: faCreditCard, label: "Payroll" },
 ];
 
 const updatesData = [
@@ -52,20 +66,17 @@ const updatesData = [
     linkText: "Advance Tax Payment",
   },
   {
-    title:
-      "Income Tax Return Filing Opens for AY 2025-26 - Start Filing Today!",
+    title: "Income Tax Return Filing Opens for AY 2025-26 - Start Filing Today!",
     date: "14-Jun-2025",
     linkText: "File Your ITR",
   },
   {
-    title:
-      "Income Tax Return Filing Opens for AY 2025-26 - Start Filing Today!",
+    title: "Income Tax Return Filing Opens for AY 2025-26 - Start Filing Today!",
     date: "14-Jun-2025",
     linkText: "File Your ITR",
   },
   {
-    title:
-      "Income Tax Return Filing Opens for AY 2025-26 - Start Filing Today!",
+    title: "Income Tax Return Filing Opens for AY 2025-26 - Start Filing Today!",
     date: "14-Jun-2025",
     linkText: "File Your ITR",
   },
@@ -81,43 +92,30 @@ const updatesData = [
   },
 ];
 
-const customerLogos = [
-  logo1,
-  logo2,
-  logo16,
-  logo5,
-  logo7,
-  logo8,
-  logo9,
-  logo11,
-  logo7,
-  logo8,
-  logo9,
-  logo11,
-];
-
 const dueDatesData = [
-  {
-    title: "IEC Code Renewal",
-    date: "16-Jun-2025",
-  },
+  { title: "IEC Code Renewal", date: "16-Jun-2025" },
   {
     title:
       "TDS Payment in Form 26QB (Property), 26QC (Rent), 26QD (Contractor Payments), 26QE (Crypto Assets) for June 2025",
     date: "16-Jun-2025",
   },
-  {
-    title: "GSTR 3B (Apr-Jun 2025) for South India",
-    date: "16-Jun-2025",
-  },
-  {
-    title: "Form 16 Issuance by Employers for FY 2024–25",
-    date: "15-Jun-2025",
-  },
-  {
-    title: "GST CMP-08 Filing for Q1 (Apr-Jun 2025)",
-    date: "18-Jul-2025",
-  },
+  { title: "GSTR 3B (Apr-Jun 2025) for South India", date: "16-Jun-2025" },
+  { title: "Form 16 Issuance by Employers for FY 2024–25", date: "15-Jun-2025" },
+  { title: "GST CMP-08 Filing for Q1 (Apr-Jun 2025)", date: "18-Jul-2025" },
+];
+
+const customerLogos = [
+  logo1, logo2, logo16, logo5, logo7, logo8, logo9, logo11,
+  logo7, logo8, logo9, logo11
+];
+
+const bankLogos = [
+  { src: bank1, alt: "ICICI Bank" },
+  { src: bank2, alt: "Axis Bank" },
+  { src: bank3, alt: "HDFC Bank" },
+  { src: bank4, alt: "Kotak Bank" },
+  { src: bank5, alt: "YES Bank" },
+  { src: bank6, alt: "YES Bank" },
 ];
 
 const enterpriseData = [
@@ -130,67 +128,22 @@ const enterpriseData = [
   },
 ];
 
-const bankLogos = [
-  { src: bank1, alt: "ICICI Bank" },
-  { src: bank2, alt: "Axis Bank" },
-  { src: bank3, alt: "HDFC Bank" },
-  { src: bank4, alt: "Kotak Bank" },
-  { src: bank5, alt: "YES Bank" },
-  { src: bank6, alt: "YES Bank" },
-];
-
 const popularSearches = [
-  "Partnership",
-  "Limited Liability Partnership",
-  "Digital Signature",
-  "Copyright Registration",
-  "Unified Portal",
-  "PAN Card Download",
-  "Nadakacheri",
-  "Flipkart Seller",
-  "Caste Certificate",
-  "IAY",
-  "EPFO Passbook",
-  "Domicile Certificate",
-  "Udyog Aadhaar",
-  "PF Withdrawal",
-  "Karnataka One",
-  "Encumbrance Certificate",
-  "Bonafide Certificate",
-  "Instant PAN Card",
-  "E PAN Card",
-  "Income Certificate",
-  "Marriage Certificate",
-  "Passport Renewal",
-  "Nivesh Mitra",
-  "MSME Registration",
-  "Experience Certificate",
-  "Trademark Status",
-  "Trade License",
-  "Domicile",
-  "eMitra",
-  "UAN",
-  "PICME",
-  "Resignation Letter Format",
-  "Ration Card",
-  "TNREGINET",
-  "RAJSSP",
-  "LLP Compliance",
-  "Form 16",
-  "Police Clearance Certificate",
-  "OBC Certificate",
-  "Jamabandi",
-  "Mee Bhoomi",
-  "SC Certificate",
-  "UAN Login",
-  "eAadhaar Download",
-  "Linking Aadhaar To Bank Accounts",
-  "mAadhaar",
-  "Aadhaar Enrollment Centre",
-  "UAN Passbook",
-  "Amazon How to Sell",
-  "PAN Card Apply",
-  "EPFO Unified Portal",
+  "Partnership", "Limited Liability Partnership", "Digital Signature",
+  "Copyright Registration", "Unified Portal", "PAN Card Download",
+  "Nadakacheri", "Flipkart Seller", "Caste Certificate", "IAY",
+  "EPFO Passbook", "Domicile Certificate", "Udyog Aadhaar",
+  "PF Withdrawal", "Karnataka One", "Encumbrance Certificate",
+  "Bonafide Certificate", "Instant PAN Card", "E PAN Card",
+  "Income Certificate", "Marriage Certificate", "Passport Renewal",
+  "Nivesh Mitra", "MSME Registration", "Experience Certificate",
+  "Trademark Status", "Trade License", "Domicile", "eMitra", "UAN",
+  "PICME", "Resignation Letter Format", "Ration Card", "TNREGINET",
+  "RAJSSP", "LLP Compliance", "Form 16", "Police Clearance Certificate",
+  "OBC Certificate", "Jamabandi", "Mee Bhoomi", "SC Certificate",
+  "UAN Login", "eAadhaar Download", "Linking Aadhaar To Bank Accounts",
+  "mAadhaar", "Aadhaar Enrollment Centre", "UAN Passbook",
+  "Amazon How to Sell", "PAN Card Apply", "EPFO Unified Portal"
 ];
 
 export default function Home() {
@@ -198,9 +151,9 @@ export default function Home() {
     <div>
       <Header />
 
-      <Carousel interval={3000} controls={true} indicators={true} pause={false}>
-        {bannerImages.map((image, index) => (
-          <Carousel.Item key={index}>
+      <Carousel interval={3000} controls indicators pause={false}>
+        {bannerImages.map((image, idx) => (
+          <Carousel.Item key={idx}>
             <img src={image.src} className="d-block w-100" alt={image.alt} />
           </Carousel.Item>
         ))}
@@ -212,16 +165,15 @@ export default function Home() {
             <h3>Explore our digital services stack</h3>
             <p>
               Grow your business and remain compliant by partnering with
-              IndiaFilings for a range of high quality, business services from{" "}
-              <br /> incorporation to payroll delivered through a seamless
-              online platform.
+              IndiaFilings for a range of high quality, business services from <br />
+              incorporation to payroll delivered through a seamless online platform.
             </p>
           </div>
           <Row className="justify-content-md-center">
             {servicesData.map((service, index) => (
               <Col key={index} lg={2} md={4} xs={6}>
                 <div className="services">
-                  <i className={service.icon}></i>
+                  <FontAwesomeIcon icon={service.icon} />
                   <p>{service.label}</p>
                 </div>
               </Col>
@@ -233,23 +185,18 @@ export default function Home() {
       <div className="alerts">
         <Container fluid>
           <Row className="justify-content-md-center">
-            {/* Updates & Alerts */}
             <Col xs lg="6" md="6">
               <Card>
                 <Card.Body>
                   <Card.Title>
-                    <i className="fa-solid fa-box-archive"></i> Updates & Alerts
+                    <FontAwesomeIcon icon={faBoxArchive} /> Updates & Alerts
                   </Card.Title>
                   <div className="scroll-tab">
                     {updatesData.map((item, index) => (
                       <div className="tab-details" key={index}>
-                        <Link to="">
-                          <h4>{item.title}</h4>
-                        </Link>
+                        <Link to=""><h4>{item.title}</h4></Link>
                         <div className="tab-details-through d-flex justify-content-between">
-                          <p>
-                            Published on: <span>{item.date}</span>
-                          </p>
+                          <p>Published on: <span>{item.date}</span></p>
                           <Link className="link-tab">{item.linkText}</Link>
                         </div>
                       </div>
@@ -259,23 +206,18 @@ export default function Home() {
               </Card>
             </Col>
 
-            {/* Due Dates */}
             <Col xs lg="6" md="6">
               <Card>
                 <Card.Body>
                   <Card.Title>
-                    <i className="fa-solid fa-calendar-week"></i> Due Dates
+                    <FontAwesomeIcon icon={faCalendarWeek} /> Due Dates
                   </Card.Title>
                   <div className="scroll-tab">
                     {dueDatesData.map((item, index) => (
                       <div className="tab-details" key={index}>
-                        <Link to="">
-                          <h4>{item.title}</h4>
-                        </Link>
+                        <Link to=""><h4>{item.title}</h4></Link>
                         <div className="tab-details-through d-flex justify-content-between">
-                          <p>
-                            Published on: <span>{item.date}</span>
-                          </p>
+                          <p>Published on: <span>{item.date}</span></p>
                         </div>
                       </div>
                     ))}
@@ -295,29 +237,18 @@ export default function Home() {
                 <div className="heading story">
                   <h3>Our Story!</h3>
                   <p>
-                    We are on a mission to make Entrepreneurship easier and
-                    affordable to millions. IndiaFilings provides a simple and
-                    intuitive platform for setting up a business and managing
-                    compliance. We started our journey in 2014 and bootstrapped
-                    the business till 2022, serving over 1 lakh businesses. In
-                    2022, we raised funding from institutional investors to
-                    further our mission. Know more about IndiaFilings.
+                    We are on a mission to make Entrepreneurship easier and affordable to millions.
+                    IndiaFilings provides a simple and intuitive platform for setting up a business and managing compliance.
+                    We started our journey in 2014 and bootstrapped the business till 2022, serving over 1 lakh businesses.
+                    In 2022, we raised funding from institutional investors to further our mission. Know more about IndiaFilings.
                   </p>
-                  <i>
-                    In 2022, we raised funding from institutional investors to
-                    further our mission. Know more about IndiaFilings.
-                  </i>
+                  <i>In 2022, we raised funding from institutional investors to further our mission. Know more about IndiaFilings.</i>
                   <h4>Our Customer!</h4>
-
                   <div className="marquee-wrapper">
                     <div className="marquee">
                       {customerLogos.map((logo, index) => (
                         <div className="marquee-logo" key={index}>
-                          <Image
-                            src={logo}
-                            alt={`Customer Logo ${index + 1}`}
-                            fluid
-                          />
+                          <Image src={logo} alt={`Customer Logo ${index+1}`} fluid />
                         </div>
                       ))}
                     </div>
@@ -337,12 +268,10 @@ export default function Home() {
           <div className="heading">
             <h3>Industry leading partnerships</h3>
             <p>
-              We work with top Indian Institutions to further our shared mission
-              of improving ease <br /> of doing business and promoting
-              Entrepreneurship in India.
+              We work with top Indian Institutions to further our shared mission of improving ease <br />
+              of doing business and promoting Entrepreneurship in India.
             </p>
           </div>
-
           <div className="bank-logos">
             <Container>
               <Row>
@@ -362,18 +291,16 @@ export default function Home() {
           {enterpriseData.map((item, index) => (
             <Card key={index}>
               <Row className="justify-content-md-center align-items-center">
+                <Col xs="12" lg="5" md="6">
+                  <Image src={item.image} fluid />
+                </Col>
                 <Col xs="12" lg="7" md="6">
                   <div className="heading story">
                     <h3>{item.title}</h3>
                     <p>{item.paragraph}</p>
-                    <i>{item.italic}</i>
-                    <br />
-                    <br />
+                    <i>{item.italic}</i><br /><br />
                     <Button className="btn-my-button">{item.buttonText}</Button>
                   </div>
-                </Col>
-                <Col xs="12" lg="5" md="6">
-                  <Image src={item.image} fluid />
                 </Col>
               </Row>
             </Card>
@@ -389,11 +316,7 @@ export default function Home() {
             </div>
             <div className="tags-wrapper">
               {popularSearches.map((search, index) => (
-                <Link
-                  key={index}
-                  className="tag"
-                  to={`/search/${encodeURIComponent(search)}`}
-                >
+                <Link key={index} className="tag" to={`/search/${encodeURIComponent(search)}`}>
                   {search}
                 </Link>
               ))}
