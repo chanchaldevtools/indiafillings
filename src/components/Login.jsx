@@ -17,11 +17,12 @@ import {
   faEyeSlash,
 } from "@fortawesome/free-solid-svg-icons";
 import LoginImg from "../Images/login.jpg";
-import { Link } from "react-router-dom";
+import { Link,useNavigate  } from "react-router-dom";
 import Header from "../assets/Header";
 import Footer from "../assets/Footer";
 
 export default function Login() {
+   const navigate = useNavigate();
   const [validated, setValidated] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -32,6 +33,7 @@ export default function Login() {
       event.stopPropagation();
     }
     setValidated(true);
+    navigate("/profile");
   };
 
   return (
