@@ -158,7 +158,7 @@ export default function Header() {
                 </Nav.Link>
               </Nav>
               <Form className="d-flex align-items-center">
-                <Button as={Link} className="btn-tax">
+                <Button as={Link} to="/document-form" className="btn-tax">
                   Tax File Now
                 </Button>
                 <Button as={Link} to="/login" className="btn-login">
