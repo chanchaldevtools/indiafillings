@@ -563,13 +563,13 @@ function DocumentForm() {
 
       <h3 className="text-center scan-pay-title mb-4">SCAN & PAY</h3>
 
-      <div className="text-center mb-4">
+      {/* <div className="text-center mb-4">
             <Image
               src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=7908508291m@pnb"
               alt="QR Code"
               className="qr-image"
             ></Image>
-      </div>
+      </div> */}
 
       <h6 className="text-center upi-id mb-4">
         UPI ID: <span className="red-text">7908508291m@pnb</span>
