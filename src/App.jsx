@@ -7,6 +7,8 @@ import About from './components/About';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Profile from './components/Profile';
+import Proprietorship from './components/Proprietorship';
+import DocumentForm from './components/DocumentForm';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,6 +22,8 @@ function App() {
           <Route path="/login" element={<Login/>} />
           <Route path='/sign-up' element={<Signup/>} />
           <Route path="/profile" element={<Profile/>} />
+          <Route path='/proprietorship' element={<Proprietorship />} />
+          <Route path='/document-form' element={<DocumentForm/>} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 * {
     margin: 0;
@@ -6,18 +6,17 @@
     box-sizing: border-box;
 }
 a:hover, .btn:hover{
-    background: none;
-    color: #071437;
+    background: #ff911e;
+    color: #ffffff;
 }
 :not(.btn-check)+.btn:active{
     background: none;
     color: #071437;
 }
-input.form-control:focus {
+input.form-control:focus, select.form-select:focus{
     outline: none;
     box-shadow: none;
     border: 1px solid #f8b065;
-
 }
 
 ::-webkit-scrollbar {
@@ -51,7 +50,7 @@ html {
 }
 
 body {
-    font-family: 'Manrope', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 15px;
     line-height: 26px;
     font-weight: normal;
@@ -160,13 +159,20 @@ button.navbar-toggler {
 }
 
 .nav-link {
-    margin-right: 10px;
-    font-weight: 500;
+    margin-right: 8px;
+    font-weight: 400;
     font-size: 14px;
     color: #071437;
 }
-
 nav.my-nav.navbar {
+    background: #fff;
+    box-shadow: rgb(149 157 165 / 7%) 0px 8px 24px;
+    padding: 6px;
+    border-top: 1px solid #ffa342;
+    border-bottom: 1px solid #27e018;
+    margin-bottom: 12px;
+}
+/* nav.my-nav.navbar {
     background: #fff;
     box-shadow: rgb(149 157 165 / 27%) 0px 8px 24px;
     margin: 10px;
@@ -174,7 +180,7 @@ nav.my-nav.navbar {
     padding: 7px;
     border-top: 2px solid #ffa342;
     border-bottom: 2px solid #27e018;
-}
+} */
 
 .carousel.slide img {
     border-radius: 10px;
@@ -217,8 +223,16 @@ nav.my-nav.navbar {
     padding-bottom: 10px;
     color: #071437;
 }
-
-.heading h3::after {
+.heading h2 {
+    position: relative;
+    display: inline-block;
+    font-size: 33px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    color: #071437;
+}
+.heading h3::after, .heading h2::after {
     content: "";
     position: absolute;
     left: 74%;
@@ -689,18 +703,35 @@ a.link-tab {
     color: #f18007;
     font-size: 14px;
 }
-
+.sub-heading {
+    margin-bottom: 25px;
+}
 .password-toggle:hover {
     color: #27e018;
 }
-
+.sub-heading small {
+    font-size: 11px;
+    line-height: 1.4;
+    margin-top: 5px;
+    color: #696969;
+    font-style: italic;
+}
 .login-form h3 {
     font-weight: 600;
 }
 
 .form-control {
+    font-size: 12px !important;
+    padding: 10px;
+}
+.form-select {
     font-size: 14px !important;
     padding: 10px;
+    padding-right: 35px;
+}
+.sub-heading span {
+    color: #e67804;
+    font-size: 13px;
 }
 
 .login-form-btn {
@@ -763,7 +794,8 @@ a.sign-up {
 /* profile  */
 
 .profile-card.card {
-    border: none;
+    border: 1px solid #55555529;
+    max-height: 100vh;
 }
 
 .profile-card h5 {
@@ -772,24 +804,13 @@ a.sign-up {
     color: #071437;
     margin: 0;
 }
-.profile {
-    position: relative;
-}
-
-.profile::before,
-.profile::after {
-    content: "";
-    display: block;
-    height: 1px;
-    background: black;
-    margin: 20px 0;
-}
-
 .profile-card p {
     font-size: 0.95rem;
     color: #7f8c8d;
 }
-
+.profile {
+    margin: 0px 5px;
+}
 .user {
     width: 150px;
     height: 150px;
@@ -889,4 +910,240 @@ svg.svg-inline--fa.fa-gauge-high {
 
 .custom-breadcrumb .breadcrumb-item.active {
   color: orange;
+}
+
+/* details pages  */
+
+.details-card.card {
+    padding: 15px;
+    box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.03);
+}
+.details-card.card img {
+    border-radius: 8px;
+}
+ol.breadcrumb {
+    background: #ffffff;
+    padding: 12px;
+    box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.03);
+    border-radius: 7px;
+    font-size: 14px;
+}
+.details-card.card p {
+    font-size: 13px;
+    line-height: 20px;
+    color: #535353;
+}
+.details-card.card h4 {
+    margin: 0;
+    font-size: 20px;
+}
+.details-card.card span {
+    color: #ff911e;
+    font-size: 12px;
+}
+button.btn-detail-submit {
+    background: #23b517;
+    border: 0;
+    width: 100%;
+}
+button.btn-detail-submit:hover {
+    background: #23b517;
+}
+li.breadcrumb-item a {
+    color: #f88710;
+}
+
+
+
+/* form  */
+
+.form-wrap{
+    background: rgba(255, 255, 255, 1);
+    width: 100%;
+    padding: 38px;
+    margin: auto;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0px 0px 40px rgb(0 0 0 / 23%);
+}
+.form-wrap:before{
+	content: "";
+	width: 90%;
+	height: calc(100% + 60px);
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	position: absolute;
+	top: -30px;
+	background: #42d935;
+	z-index: -1;
+	opacity: 0.8;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+}
+.sub-heading p {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    border-bottom: 1px solid #e4e4e4;
+}
+.my-check.form-check label {
+    font-size: 12px;
+}
+.sub-heading .form-group {
+    margin-bottom: 0;
+}
+.sub-heading label {
+    font-size: 13px !important;
+    margin-bottom: 0;
+    color: #282828 !important;
+}
+input.multi.form-control {
+    padding: 5px;
+}
+.form-group{
+	margin-bottom: 25px;
+}
+.sub-heading .form-control {
+    font-size: 13px !important;
+    padding: 8px;
+    border: 1px solid #b5b5b5;
+}
+.sub-heading .form-select {
+    padding: 8px;
+    font-size: 13px !important;
+    border: 1px solid #b5b5b5;
+    padding-right: 34px;
+}
+.custom-control-label{
+	color: #000;
+	font-size: 16px;
+}
+textarea.form-control{
+	height: 160px;
+	padding-top: 15px;
+	resize: none;
+}
+p.form {
+    font-size: 20px;
+    color: #ff911e;
+}
+.sub-under-heading {
+    font-size: 14px;
+    color: #e22e2e;
+    line-height: 1.6;
+}
+.bank-card.card p {
+    margin-bottom: 5px;
+}
+.bank-card {
+border: 1px solid #e2e2e2;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 40px rgb(0 0 0 / 8%);
+}
+
+.bank-title {
+  color: #e22e2e;
+  margin-bottom: 20px;
+}
+
+.blue-text {
+  color: #007bff; /* Bootstrap primary blue */
+}
+
+.red-text {
+  color: #e22e2e;
+}
+
+.upi-container {
+  background: linear-gradient(orange, white, #ffffff);
+  border-radius: 15px;
+  padding: 30px;
+}
+
+.pnb-logo {
+  width: 100px;
+}
+
+.merchant-name {
+  font-weight: 600;
+}
+
+.scan-pay-title {
+  font-weight: bold;
+}
+
+.qr-card {
+  width: 250px;
+  border: 2px solid #000;
+  border-radius: 8px;
+}
+
+.qr-image {
+height: 215px;
+    width: auto;
+    background: #fff;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.upi-id {
+  font-weight: 600;
+}
+.bhim-upi-logo {
+  width: 180px;
+}
+
+button.btn-pay {
+    background: #ff911e;
+    border: 0;
+    margin: 10px 0;
+    padding: 15px;
+}
+.app-logo {
+  width: 100px;
+  height: auto;
+  margin: 10px;
+}
+
+.helpdesk-text {
+    font-weight: 600;
+    color: #de3434;
+    font-size: 21px;
+}
+button.btn-block {
+    background: #61d559;
+    border: 0;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+
+/* Responsive  */
+
+@media (max-width: 768px) {
+    .form-wrap {
+    padding: 20px;
+  }
+}
+@media (max-width: 600px) {
+    .form-wrap {
+    padding: 20px;
+  }
+  .sub-heading p {
+    margin-bottom: 4px;
+    line-height: 8px;
+    padding-bottom: 12px;
+}
+.helpdesk-text {
+    font-size: 12px;
+}
+.merchant-name {
+    font-size: 12px;
+}
 }

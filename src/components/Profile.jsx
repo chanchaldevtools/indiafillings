@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import verifyImg from '../Images/verify.png'
 import {
   Container,
   Row,
@@ -6,7 +7,6 @@ import {
   Card,
   Button,
   Image,
-  Breadcrumb,
   Nav,
 } from "react-bootstrap";
 import User from "../Images/user.png";
@@ -19,6 +19,7 @@ import {
   faCog,
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
+
 
 function Profile() {
   const [show, setShow] = useState(false);
@@ -49,8 +50,8 @@ function Profile() {
         </Container>
       </div> */}
 
-      <Container fluid className="mb-5">
-        <Row className="p-2 profile">
+      <Container fluid className="mb-5 mt-4">
+        <Row className="profile">
           <Col md={3} lg={2} className="side-nav p-3 mb-5">
             <h4 className="mb-4">My Profile</h4>
             <Nav className="flex-column">
@@ -90,7 +91,7 @@ function Profile() {
                       />
                     </Col>
                     <Col md={9}>
-                      <h5>{userProfile.name}</h5>
+                      <h5>{userProfile.name} <Image src={verifyImg}></Image></h5>
                       {userProfile.details.map((detail, index) => (
                         <Row className="mt-2 mb-1" key={index}>
                           <Col sm={4}>

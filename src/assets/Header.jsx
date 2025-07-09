@@ -57,7 +57,7 @@ export default function Header() {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/llp-registration">LLP Registration</Link>
+                          <Link to="/proprietorship">Proprietorship</Link>
                         </li>
                         <li>
                           <Link to="/startup-india">Startup India Scheme</Link>
