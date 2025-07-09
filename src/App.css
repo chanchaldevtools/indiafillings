@@ -5,7 +5,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-a:hover, .btn:hover{
+a:hover{
+    background: inherit;
+    color: #ffffff;
+}
+.btn:hover{
     background: #ff911e;
     color: #ffffff;
 }

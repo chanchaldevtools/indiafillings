@@ -19,6 +19,7 @@ import {
   faCog,
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 
 function Profile() {
@@ -59,7 +60,7 @@ function Profile() {
                 <FontAwesomeIcon icon={faHome} className="me-2" />
                 Profile
               </Nav.Link>
-              <Nav.Link to="/" className="mb-2">
+              <Nav.Link as={Link} to="/document-form" className="mb-2">
                 <FontAwesomeIcon icon={faUser} className="me-2" />
                 creacte a tax file
               </Nav.Link>

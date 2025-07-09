@@ -92,7 +92,7 @@ export default function Login() {
                   </InputGroup>
 
                   <div className="d-grid">
-                    <Button className="login-form-btn" type="submit" size="lg">
+                    <Button as={Link} to="/profile" className="login-form-btn" type="submit" size="lg">
                       Login
                     </Button>
                   </div>
