@@ -1,7 +1,15 @@
 import React from "react";
 import Header from "../assets/Header";
 import Footer from "../assets/Footer";
-import { Container, Row, Col, Form, Button, Card, Image } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  Button,
+  Card,
+  Image,
+} from "react-bootstrap";
 import { useState } from "react";
 import Pnb from "../Images/bank5.png";
 import UPI1 from "../Images/upi-1.png";
@@ -311,9 +319,7 @@ function DocumentForm() {
                     </Col>
                     <Col lg={2} md={6} xs={12}>
                       <Form.Group className="form-group">
-                        <Form.Label>
-                          Outstanding loan (Date)
-                        </Form.Label>
+                        <Form.Label>Outstanding loan (Date)</Form.Label>
                         <Form.Control type="date" name="text" required />
                       </Form.Group>
                     </Col>
@@ -534,7 +540,7 @@ function DocumentForm() {
                   <strong>UPI ID:</strong>{" "}
                   <span className="red-text">7908508291m@pnb</span>
                 </p>
-                 <hr />
+                <hr />
                 <p className="mt-3">
                   Kindly send all the documents via Mail:
                   <a
@@ -550,20 +556,17 @@ function DocumentForm() {
 
             <div className="upi-container my-5">
               <div className="text-center mb-4">
-        <Image
-          src={Pnb}
-          alt="PNB Logo"
-          className="pnb-logo"
-        > </Image>
-      </div>
+                <Image src={Pnb} alt="PNB Logo" className="pnb-logo"></Image>
+              </div>
 
-      <h5 className="text-center merchant-name mb-4">
-        MERCHANT: BANSAL TAX PLANNING AND WEALTH MANAGEMENT PRIVATE LIMITED
-      </h5>
+              <h5 className="text-center merchant-name mb-4">
+                MERCHANT: BANSAL TAX PLANNING AND WEALTH MANAGEMENT PRIVATE
+                LIMITED
+              </h5>
 
-      <h3 className="text-center scan-pay-title mb-4">SCAN & PAY</h3>
+              <h3 className="text-center scan-pay-title mb-4">SCAN & PAY</h3>
 
-      {/* <div className="text-center mb-4">
+              {/* <div className="text-center mb-4">
             <Image
               src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=7908508291m@pnb"
               alt="QR Code"
@@ -571,70 +574,56 @@ function DocumentForm() {
             ></Image>
       </div> */}
 
-      <h6 className="text-center upi-id mb-4">
-        UPI ID: <span className="red-text">7908508291m@pnb</span>
-      </h6>
+              <h6 className="text-center upi-id mb-4">
+                UPI ID: <span className="red-text">7908508291m@pnb</span>
+              </h6>
 
-      <div className="text-center mb-3">
-        <Image
-          src={UPI1}
-          alt="BHIM UPI"
-          className="bhim-upi-logo"
-        ></Image>
-      </div>
+              <div className="text-center mb-3">
+                <Image
+                  src={UPI1}
+                  alt="BHIM UPI"
+                  className="bhim-upi-logo"
+                ></Image>
+              </div>
 
-      <div className="text-center pay-text mb-4">
-        <Button className="btn-pay"> Pay at this Outlet using any UPI app</Button>
-      </div>
+              <div className="text-center pay-text mb-4">
+                <Button className="btn-pay">
+                  Pay at this Outlet using any UPI app
+                </Button>
+              </div>
 
-      <Row className="align-items-center justify-content-center mb-4">
-        <Col xs={2}>
-    <Image 
-      src={UPI2} 
-      alt="Amazon Pay" 
-      className="app-logo"
-      fluid 
-    />
-  </Col>
-  <Col xs={2}>
-    <Image 
-      src={UPI3} 
-      alt="Google Pay" 
-      className="app-logo"
-      fluid 
-    />
-  </Col>
-  <Col xs={2}>
-    <Image 
-      src={UPI4} 
-      alt="PhonePe" 
-      className="app-logo"
-      fluid 
-    />
-  </Col>
-  <Col xs={2}>
-    <Image 
-      src={UPI6} 
-      alt="Paytm" 
-      className="app-logo"
-      fluid 
-    />
-  </Col>
-  <Col xs={2}>
-    <Image 
-      src={UPI5}
-      alt="Mobikwik" 
-      className="app-logo"
-      fluid 
-    />
-  </Col>
-      </Row>
+              <Row className="align-items-center justify-content-center mb-4">
+                <Col xs={2}>
+                  <Image
+                    src={UPI2}
+                    alt="Amazon Pay"
+                    className="app-logo"
+                    fluid
+                  />
+                </Col>
+                <Col xs={2}>
+                  <Image
+                    src={UPI3}
+                    alt="Google Pay"
+                    className="app-logo"
+                    fluid
+                  />
+                </Col>
+                <Col xs={2}>
+                  <Image src={UPI4} alt="PhonePe" className="app-logo" fluid />
+                </Col>
+                <Col xs={2}>
+                  <Image src={UPI6} alt="Paytm" className="app-logo" fluid />
+                </Col>
+                <Col xs={2}>
+                  <Image src={UPI5} alt="Mobikwik" className="app-logo" fluid />
+                </Col>
+              </Row>
 
-      <h6 className="text-center helpdesk-text">
-        Helpdesk: 18001800 / 18002021
-      </h6>
+              <h6 className="text-center helpdesk-text">
+                Helpdesk: 18001800 / 18002021
+              </h6>
             </div>
-
           </Form>
         </div>
       </Container>

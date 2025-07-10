@@ -1,6 +1,5 @@
-// App.jsx
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import './App.css';
 import Home from './components/Home';
 import About from './components/About';
@@ -11,22 +10,22 @@ import Proprietorship from './components/Proprietorship';
 import DocumentForm from './components/DocumentForm';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login/>} />
-          <Route path='/sign-up' element={<Signup/>} />
-          <Route path="/profile" element={<Profile/>} />
-          <Route path='/proprietorship' element={<Proprietorship />} />
-          <Route path='/document-form' element={<DocumentForm/>} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/sign-up" element={<Signup />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/proprietorship" element={<Proprietorship />} />
+      <Route path="/document-form" element={<DocumentForm />} />
+    </Routes>
   );
 }
 

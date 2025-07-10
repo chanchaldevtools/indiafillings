@@ -1,14 +1,6 @@
 import React, { useState } from "react";
-import verifyImg from '../Images/verify.png'
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  Button,
-  Image,
-  Nav,
-} from "react-bootstrap";
+import verifyImg from "../Images/verify.png";
+import { Container, Row, Col, Card, Button, Image, Nav } from "react-bootstrap";
 import User from "../Images/user.png";
 import Header from "../assets/Header";
 import Footer from "../assets/Footer";
@@ -18,9 +10,10 @@ import {
   faUser,
   faCog,
   faSignOutAlt,
+  faFileExport,
+  faListUl,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-
 
 function Profile() {
   const [show, setShow] = useState(false);
@@ -57,15 +50,15 @@ function Profile() {
             <h4 className="mb-4">My Profile</h4>
             <Nav className="flex-column">
               <Nav.Link to="/" className="mb-2">
-                <FontAwesomeIcon icon={faHome} className="me-2" />
+                <FontAwesomeIcon icon={faUser} className="me-2" />
                 Profile
               </Nav.Link>
               <Nav.Link as={Link} to="/document-form" className="mb-2">
-                <FontAwesomeIcon icon={faUser} className="me-2" />
+                <FontAwesomeIcon icon={faFileExport} className="me-2" />
                 creacte a tax file
               </Nav.Link>
               <Nav.Link to="/" className="mb-2">
-                <FontAwesomeIcon icon={faCog} className="me-2" />
+                <FontAwesomeIcon icon={faListUl} className="me-2" />
                 list of tax file
               </Nav.Link>
               <Nav.Link to="/" className="mb-2">
@@ -81,32 +74,34 @@ function Profile() {
 
           <Col md={9} lg={10}>
             <Row>
-                <Card className="profile-card mx-2 p-4">
-                  <Row>
-                    <Col md={3} className="text-center mb-3">
-                      <Image
-                        src={userProfile.image}
-                        roundedCircle
-                        fluid
-                        className="mb-3 user"
-                      />
-                    </Col>
-                    <Col md={9}>
-                      <h5>{userProfile.name} <Image src={verifyImg}></Image></h5>
-                      {userProfile.details.map((detail, index) => (
-                        <Row className="mt-2 mb-1" key={index}>
-                          <Col sm={4}>
-                            <strong>{detail.label}:</strong>
-                          </Col>
-                          <Col sm={8}>{detail.value}</Col>
-                        </Row>
-                      ))}
-                      {/* <Button className="logout mt-3">
+              <Card className="profile-card mx-2 p-4">
+                <Row>
+                  <Col md={3} className="text-center mb-3">
+                    <Image
+                      src={userProfile.image}
+                      roundedCircle
+                      fluid
+                      className="mb-3 user"
+                    />
+                  </Col>
+                  <Col md={9}>
+                    <h5>
+                      {userProfile.name} <Image src={verifyImg}></Image>
+                    </h5>
+                    {userProfile.details.map((detail, index) => (
+                      <Row className="mt-2 mb-1" key={index}>
+                        <Col sm={4}>
+                          <strong>{detail.label}:</strong>
+                        </Col>
+                        <Col sm={8}>{detail.value}</Col>
+                      </Row>
+                    ))}
+                    {/* <Button className="logout mt-3">
                     Logout
                   </Button> */}
-                    </Col>
-                  </Row>
-                </Card>
+                  </Col>
+                </Row>
+              </Card>
             </Row>
           </Col>
         </Row>

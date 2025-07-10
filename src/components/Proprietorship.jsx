@@ -39,10 +39,14 @@ function Proprietorship() {
         <Container>
           <Breadcrumb>
             <Breadcrumb.Item>
-              <Link as={Link} to="/">Home</Link>
+              <Link as={Link} to="/">
+                Home
+              </Link>
             </Breadcrumb.Item>
             <Breadcrumb.Item>
-              <Link as={Link} to="/startup">Startup</Link>
+              <Link as={Link} to="/startup">
+                Startup
+              </Link>
             </Breadcrumb.Item>
             <Breadcrumb.Item active>Proprietorship</Breadcrumb.Item>
           </Breadcrumb>
