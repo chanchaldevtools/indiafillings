@@ -46,28 +46,28 @@ function Profile() {
 
       <Container fluid className="mb-5 mt-4">
         <Row className="profile">
-          <Col md={3} lg={2} className="side-nav p-3 mb-5">
+          <Col md={3} lg={2} className="side-nav p-3 mb-4 sticky-top">
             <h4 className="mb-4">My Profile</h4>
             <Nav className="flex-column">
-              <Nav.Link to="/" className="mb-2">
+              <Nav.Link as={Link} to="/profile" className="mb-2">
                 <FontAwesomeIcon icon={faUser} className="me-2" />
                 Profile
               </Nav.Link>
               <Nav.Link as={Link} to="/document-form" className="mb-2">
                 <FontAwesomeIcon icon={faFileExport} className="me-2" />
-                creacte a tax file
+                Create a tax file
               </Nav.Link>
-              <Nav.Link to="/" className="mb-2">
+              <Nav.Link as={Link} to="/tax-table" className="mb-2">
                 <FontAwesomeIcon icon={faListUl} className="me-2" />
-                list of tax file
+                List of tax files
               </Nav.Link>
-              <Nav.Link to="/" className="mb-2">
+              <Nav.Link as={Link} to="/" className="mb-2">
                 <FontAwesomeIcon icon={faCog} className="me-2" />
-                settings
+                Settings
               </Nav.Link>
-              <Nav.Link to="/" className="logout mt-auto">
+              <Nav.Link as={Link} to="/" className="logout mt-auto">
                 <FontAwesomeIcon icon={faSignOutAlt} className="me-2" />
-                logout
+                Logout
               </Nav.Link>
             </Nav>
           </Col>
